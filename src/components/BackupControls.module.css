@@ -1,0 +1,28 @@
+.controls {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.confirm {
+  display: grid;
+  gap: 10px;
+  max-width: 420px;
+  padding: 14px;
+  border: 1px solid var(--amber);
+  border-radius: var(--radius-m);
+  background: rgb(255 181 71 / 0.08);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .controls {
+    justify-items: start;
+  }
+}

@@ -1,0 +1,47 @@
+.form,
+.saved {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.count {
+  color: var(--faint);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.quote {
+  margin: 0;
+  padding: 4px 0 4px 16px;
+  border-left: 3px solid var(--amber);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  white-space: pre-wrap;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}

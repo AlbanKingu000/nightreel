@@ -1,0 +1,72 @@
+.shimmer,
+.poster,
+.line,
+.lineShort,
+.hero,
+.heading {
+  border-radius: var(--radius-s);
+  background: linear-gradient(100deg, var(--ink-2) 30%, var(--ink-3) 50%, var(--ink-2) 70%);
+  background-size: 300% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.ticket {
+  display: grid;
+  gap: 8px;
+  width: var(--card-w);
+}
+
+.poster {
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius-m);
+}
+
+.line {
+  height: 12px;
+}
+
+.lineShort {
+  width: 60%;
+  height: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 24px 18px;
+}
+
+.grid .ticket {
+  width: auto;
+}
+
+.hero {
+  height: min(52vh, 460px);
+  margin-bottom: 36px;
+  border-radius: var(--radius-l);
+}
+
+.row {
+  margin-bottom: 32px;
+}
+
+.heading {
+  width: 220px;
+  height: 22px;
+  margin-bottom: 16px;
+}
+
+.track {
+  display: flex;
+  gap: 18px;
+  overflow: hidden;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}

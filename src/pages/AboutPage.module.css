@@ -1,0 +1,59 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: rgb(255 255 255 / 0.02);
+  color: var(--cream-dim);
+  line-height: 1.7;
+}
+
+.card a {
+  color: var(--amber);
+  text-decoration: underline;
+}
+
+.card strong {
+  color: var(--cream);
+}
+
+.shortcuts {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.shortcuts div {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.shortcuts dd {
+  margin: 0;
+}
+
+.shortcuts kbd {
+  padding: 2px 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  color: var(--cream);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+}
+
+.credits {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+}

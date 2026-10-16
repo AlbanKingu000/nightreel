@@ -1,0 +1,41 @@
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 32px;
+  margin: 24px 0 40px;
+}
+
+.text {
+  display: grid;
+  gap: 8px;
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.best {
+  color: var(--amber);
+}
+
+.best:hover,
+.external:hover {
+  text-decoration: underline;
+}
+
+.external {
+  color: var(--faint);
+  font-size: 0.85rem;
+}
+
+.section {
+  margin-bottom: 44px;
+}
+
+.section h2 {
+  margin-bottom: 8px;
+}

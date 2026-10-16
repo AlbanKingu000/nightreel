@@ -1,0 +1,52 @@
+.rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.star svg {
+  width: 32px;
+  height: 32px;
+}
+
+.empty {
+  color: var(--ink-3);
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  overflow: hidden;
+  color: var(--amber);
+  filter: drop-shadow(0 0 6px var(--amber-glow));
+}
+
+.value {
+  color: var(--cream-dim);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.clear {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-decoration: underline;
+}

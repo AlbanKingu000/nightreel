@@ -1,0 +1,192 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.controls {
+  display: grid;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: rgb(17 13 23 / 0.7);
+}
+
+.group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend,
+.field span {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+}
+
+.count {
+  color: var(--cream-dim);
+  font-size: 0.9rem;
+}
+
+.lever {
+  min-height: 56px;
+  font-size: 1.05rem;
+}
+
+.lever:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px;
+  --reel-w: clamp(180px, 22vw, 240px);
+}
+
+/* The reel window shows one poster; the strip scrolls through it like a slot machine. */
+.window {
+  position: relative;
+  flex: none;
+  width: var(--reel-w);
+  height: calc(var(--reel-w) * 1.5);
+  overflow: hidden;
+  border: 3px solid var(--amber);
+  border-radius: var(--radius-l);
+  background: var(--ink-2);
+  box-shadow:
+    0 0 0 8px rgb(9 7 13 / 0.8),
+    0 0 50px -10px var(--amber-glow);
+}
+
+.window::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgb(9 7 13 / 0.6), transparent 18%, transparent 82%, rgb(9 7 13 / 0.6));
+  pointer-events: none;
+}
+
+.strip {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform: translateY(calc(var(--steps) * var(--reel-w) * -1.5));
+}
+
+.rolling {
+  animation: roll 1.8s cubic-bezier(0.12, 0.6, 0.1, 1) both;
+}
+
+@keyframes roll {
+  from {
+    filter: blur(2px);
+    transform: translateY(0);
+  }
+  85% {
+    filter: blur(0.5px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+.frame {
+  height: calc(var(--reel-w) * 1.5);
+}
+
+.frame > div {
+  height: 100%;
+  border-radius: 0;
+}
+
+.idle {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  color: var(--amber);
+}
+
+.idle svg {
+  width: 72px;
+  height: 72px;
+  animation: idle-spin 6s linear infinite;
+}
+
+@keyframes idle-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.result {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+  animation: reveal 400ms var(--ease-out);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.resultTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.resultMeta {
+  color: var(--cream-dim);
+}
+
+.resultOverview {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--muted);
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.resultActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

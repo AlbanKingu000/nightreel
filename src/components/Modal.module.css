@@ -1,0 +1,36 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: start center;
+  padding: max(6vh, 24px) 16px 24px;
+  overflow-y: auto;
+  background: rgb(5 3 8 / 0.72);
+  backdrop-filter: blur(6px);
+  animation: fade 160ms ease-out;
+}
+
+.panel {
+  position: relative;
+  width: min(680px, 100%);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-l);
+  background: var(--ink-1);
+  box-shadow: 0 30px 80px -20px rgb(0 0 0 / 0.8);
+  outline: none;
+  animation: rise 220ms var(--ease-out);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}

@@ -1,0 +1,80 @@
+.shelf {
+  margin-bottom: 36px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.controls {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.seeAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: 6px;
+  color: var(--amber);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.seeAll:hover {
+  text-decoration: underline;
+}
+
+.seeAll svg {
+  width: 16px;
+  height: 16px;
+}
+
+.track {
+  display: grid;
+  grid-auto-columns: var(--card-w);
+  grid-auto-flow: column;
+  gap: 18px;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 16px var(--gutter) 18px;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding: 0 var(--gutter);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  scroll-snap-align: start;
+}
+
+/* Same footprint as a ticket card, shown until the shelf scrolls near the viewport. */
+.placeholder {
+  aspect-ratio: 2 / 3.75;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--ink-1);
+}
+
+@media (max-width: 640px) {
+  .controls button {
+    display: none;
+  }
+}

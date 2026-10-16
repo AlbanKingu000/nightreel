@@ -1,0 +1,15 @@
+node_modules
+dist
+coverage
+.cache
+playwright-report
+test-results
+*.log
+.env
+.env.*
+.claude/settings.local.json
+Thumbs.db
+.DS_Store
+
+# Data pipeline output and caches (raw Wikidata/Wikipedia responses)
+data-report.json

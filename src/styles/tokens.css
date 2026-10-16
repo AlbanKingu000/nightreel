@@ -1,0 +1,43 @@
+/* Registered so the page tint can animate smoothly between movies. */
+@property --ambient {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #3b2350;
+}
+
+:root {
+  color-scheme: dark;
+
+  --ink-0: #09070d;
+  --ink-1: #110d17;
+  --ink-2: #1a1422;
+  --ink-3: #251c30;
+  --line: rgb(255 236 214 / 0.09);
+  --line-strong: rgb(255 236 214 / 0.2);
+
+  --cream: #f6ead7;
+  --cream-dim: #d8ccbb;
+  --muted: #a397ad;
+  --faint: #8f839a;
+
+  --amber: #ffb547;
+  --amber-hot: #ff8a3d;
+  --amber-glow: rgb(255 181 71 / 0.35);
+  --velvet: #e0566e;
+  --mint: #6fd6b0;
+  --ambient: #3b2350;
+
+  --font-display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+  --font-serif: 'Fraunces Variable', Georgia, serif;
+  --font-ui: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 22px;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --gutter: clamp(16px, 4vw, 56px);
+  --header-h: 64px;
+  --card-w: clamp(136px, 15vw, 180px);
+
+  transition: --ambient 900ms ease;
+}
